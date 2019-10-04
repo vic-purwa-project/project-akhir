@@ -1,0 +1,55 @@
+import React, { Component } from 'react'
+import { 
+    Button,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+    UncontrolledDropdown
+
+} from 'reactstrap'
+import { NavLink } from 'react-router-dom'
+import '../components/Header.css'
+
+class Header extends Component {
+    render() {
+        return (
+            <nav style = {{backgroundColor: '#066575'}} className="navbar navbar-expand-lg p-4">
+                <a style={{fontFamily: 'Indie Flower, cursive', fontSize: '40px', color: 'white'}} className="navbar-brand" href="/">C🍬ndyMart</a>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+
+                
+                    <form className="form-inline my-2 my-lg-0">
+                    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+                    <button className="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                <div>
+                    
+                    <UncontrolledDropdown className='account-menu' nav inNavbar>
+                    <DropdownToggle nav caret style={{color: 'white'}}>
+                        Account
+                    </DropdownToggle>
+                    <DropdownMenu middle>
+                        <NavLink to='/signin'>
+                            <DropdownItem>
+                                Sign In
+                            </DropdownItem>
+                        </NavLink>
+                        <NavLink to='/signup'>
+                            <DropdownItem>
+                                Sign Up
+                            </DropdownItem>
+                        </NavLink>
+                    </DropdownMenu>
+                    </UncontrolledDropdown>
+                </div>
+
+
+
+                </nav>
+        )
+    }
+}
+
+export default Header

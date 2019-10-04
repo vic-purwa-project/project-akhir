@@ -5,6 +5,7 @@ import Header from './Header'
 
 import Signup from './Signup'
 import Signin from './Signin'
+import Home from './Home'
 
 class App extends Component {
     render() {
@@ -12,7 +13,7 @@ class App extends Component {
             <div>
                 <BrowserRouter>
                     <Header/>
-                    
+                    <Route path='/' component={Home} />
                     <Route path='/signup' component={Signup} />
                     <Route path='/signin' component={Signin} />
                 </BrowserRouter>
